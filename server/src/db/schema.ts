@@ -33,7 +33,7 @@ export const order_items = pgTable("order_items", {
     .notNull()
     .references(() => products.id),
   quantity: integer("quantity").notNull(),
-  total: doublePrecision("total").default(0),
+  total: doublePrecision("total").default(0).notNull(),
 });
 
 export type Product = InferModel<typeof products>;
